@@ -1,6 +1,4 @@
 class Product < ApplicationRecord
-    validates :title, presence: true
-    validates :price, presence: true
-    validates :stock_quantity, presence: true
-  end
-  
+  belongs_to :category
+  validates :title, :price, :stock_quantity, :category_id, presence: true
+end
