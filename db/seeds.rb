@@ -5,7 +5,7 @@ Product.destroy_all
 Category.destroy_all
 
 # CSV 파일 경로 지정
-csv_file = Rails.root.join('db', 'products.csv')
+csv_file = Rails.root.join('db/products.csv')
 csv_data = File.read(csv_file)
 
 # CSV 데이터 파싱
