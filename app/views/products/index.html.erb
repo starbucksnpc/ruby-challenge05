@@ -1,9 +1,24 @@
 <h1>Products</h1>
 
-<% @products.each do |product| %>
-  <div>
-    <h2><%= link_to product.title, product_path(product) %></h2>
-    <p>price: <%= product.price %></p>
-    <p>stock_quantity: <%= product.stock_quantity %></p>
-  </div>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Stock Quantity</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.title, product_path(product) %></td>
+        <td><%= product.description %></td>
+        <td><%= number_to_currency(product.price) %></td>
+        <td><%= product.stock_quantity %></td>
+        <td><%= product.category.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
